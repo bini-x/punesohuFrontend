@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f4c75;
+  --color-secondary: #6d94c5;
+  --color-footer: #34495e;
+  --color-inputbg: #f7f7f7;
+}
+@layer base {
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-semibold leading-tight;
+  }
+  h3 {
+    @apply text-xl font-semibold mb-6;
+  }
+  label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+}
+@layer components {
+  .nav-link {
+    @apply text-gray-700 hover:text-primary font-medium transition-colors duration-200;
+  }
+
+  .publikoPune {
+    @apply w-full px-6 py-3 bg-gradient-to-r from-[#0f4c75] to-[#6d94c5] text-white font-semibold rounded-xl hover:from-[#0d3d5e] hover:to-[#5a7dad] transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+
+  .kycja {
+    @apply px-6 py-2 text-primary hover:text-white font-medium duration-200 border hover:bg-primary rounded-lg transition-colors;
+  }
+
+  .butoniKycjeRegjistrim {
+    @apply border  block rounded-3xl p-1 w-full bg-primary hover:bg-white border-primary text-white hover:text-black cursor-pointer;
+  }
+  .input {
+    @apply border border-gray-400 rounded-sm p-3 w-full box-border;
+  }
+  .label {
+    @apply text-gray-600 px-1 font-semibold;
+  }
+  .labelRegjistrimi {
+    @apply flex items-center justify-center p-3 border border-inputbg rounded-lg cursor-pointer bg-inputbg transition-all duration-200 peer-checked:border-[#6a6a6a] peer-checked:font-semibold;
+  }
+  .paragraf {
+    @apply flex items-center text-gray-700 font-medium;
+  }
+  .paragrafProfili {
+    @apply text-gray-600 flex items-center justify-center sm:justify-start gap-2;
+  }
+  .spanAplikanti {
+    @apply text-xs font-semibold text-gray-500 uppercase tracking-wider;
+  }
+  .info {
+    @apply text-gray-600 text-sm;
+  }
+  .input-ShpalljaProfil {
+    @apply w-full px-2 py-3 border border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-sm font-semibold;
+  }
+  .profileDropDown {
+    @apply flex items-center px-4 py-2 text-zinc-700 hover:text-primary hover:bg-gray-100 transition-colors;
+  }
+  .input-aplikimi {
+    @apply w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all;
+  }
+  .input-kerkimi {
+    @apply pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent w-full;
+  }
+  .butonSortimi {
+    @apply w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded flex items-center justify-between;
+  }
+  .butonModifikimi {
+    @apply w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2 rounded-t-lg;
+  }
+  .tableHead {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+  .tableData {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+  .tableInfo {
+    @apply flex items-center text-sm text-gray-600;
+  }
+  .labelTabela {
+    @apply block text-sm font-medium text-gray-600 mb-2;
+  }
+  .detajetAplikantit {
+    @apply bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow;
+  }
+  .icon-aplikimi {
+    @apply absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400;
+  }
+  .shpalljaCard {
+    @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-[repeat(3,430px)] gap-8 justify-center mx-4 my-6 md:mx-10 md:my-10 lg:mx-16;
+  }
+  .hrCard {
+    @apply border-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mt-2 mb-3;
+  }
+
+  .ballinaMysafir {
+    @apply grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[repeat(2,630px)] justify-center gap-6 mt-20 m-10 md:m-15 lg:m-15 xl:m-20;
+  }
+  .info-ballinaMysafir {
+    @apply flex gap-2 items-center mb-2;
+  }
+  .paragrafBallinaMysafir {
+    @apply mb-6 text-gray-900 font-extralight;
+  }
+  .containerballinamysafir {
+    @apply border border-gray-50 shadow-xl p-10 rounded-xl;
+  }
+  .kerko {
+    @apply flex items-center gap-2 px-3 py-2 rounded-lg focus-within:border-blue-500;
+  }
+  .responsiveKerko {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_auto] gap-4 p-4;
+  }
+  .footerLinks {
+    @apply hover:text-white cursor-pointer;
+  }
+  .kompaniaCard {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[repeat(2,630px)] gap-10 justify-center m-10 sm:m-12 md:m-15 lg:m-20;
+  }
+  .tabela {
+    @apply flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6 border-b border-gray-200 gap-4;
+  }
+
+  .header-white-text {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .header-white-text a:not([class*="bg-"]):not([class*="border"]),
+  .header-white-text button:not([class*="bg-"]):not([class*="border"]),
+  .header-white-text span:not([class*="bg-"]):not([class*="border"]) {
+    color: white !important;
+  }
+
+  .header-white-text .bg-clip-text {
+    background: white !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  .header-white-text .text-transparent {
+    color: white !important;
+  }
+
+  .header-white-text svg:not([class*="lucide"]) {
+    color: white !important;
+  }
+
+  .header-white-text nav a .absolute {
+    background: white !important;
+  }
+
+  .header-white-text
+    button[class*="rounded-xl"]:not([class*="bg-white"]):not(
+      [class*="bg-transparent"]
+    ):hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .header-white-text .absolute.right-0 {
+    background-color: white !important;
+  }
+
+  .header-white-text .absolute.right-0 a,
+  .header-white-text .absolute.right-0 button,
+  .header-white-text .absolute.right-0 span,
+  .header-white-text .absolute.right-0 p {
+    color: #374151 !important;
+  }
+
+  .header-white-text .absolute.right-0 a:hover,
+  .header-white-text .absolute.right-0 button:hover {
+    background: linear-gradient(
+      to right,
+      rgba(15, 76, 117, 0.05),
+      rgba(50, 130, 184, 0.05)
+    ) !important;
+    color: #0f4c75 !important;
+  }
+
+  .header-white-text .absolute.right-0 svg {
+    color: #0f4c75 !important;
+  }
+
+  .header-white-text .absolute.right-0 .group:hover .bg-\[\#0F4C75\]\/10 {
+    background-color: rgba(15, 76, 117, 0.2) !important;
+  }
+
+  .header-white-text .absolute.right-0 .hover\:bg-red-50:hover {
+    background-color: #fef2f2 !important;
+  }
+
+  .header-white-text .absolute.right-0 .hover\:text-red-600:hover {
+    color: #dc2626 !important;
+  }
+
+  .header-white-text .absolute.right-0 .text-red-600 {
+    color: #dc2626 !important;
+  }
+
+  .header-white-text .absolute.right-0 .text-gray-500 {
+    color: #6b7280 !important;
+  }
+
+  .header-white-text .absolute.right-0 .text-zinc-800 {
+    color: #27272a !important;
+  }
+
+  .header-white-text .absolute.right-0 .text-zinc-700 {
+    color: #3f3f46 !important;
+  }
+
+  .header-white-text + div {
+    color: #374151 !important;
+  }
+
+  .mobile-menu-override {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  .mobile-menu-override
+    *:not([class*="bg-gradient"]):not(.publikoPune):not(.publikoPune *),
+  .mobile-menu-override a:not([class*="bg-gradient"]):not(.publikoPune),
+  .mobile-menu-override button:not([class*="bg-gradient"]):not(.publikoPune),
+  .mobile-menu-override
+    span:not([class*="bg-gradient"]):not([class*="lucide"]):not(.publikoPune) {
+    color: #1f2937 !important;
+  }
+
+  .mobile-menu-override .text-gray-800,
+  .mobile-menu-override [class*="text-gray"] {
+    color: #1f2937 !important;
+  }
+
+  .mobile-menu-override .publikoPune {
+    color: white !important;
+  }
+
+  .header-white-text ~ .mobile-menu-override,
+  .header-white-text + .mobile-menu-override {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .header-white-text
+    ~ .mobile-menu-override
+    *:not([class*="bg-gradient"]):not(.text-white):not([class*="text-red"]):not(
+      .publikoPune
+    ):not(.publikoPune *),
+  .header-white-text
+    + .mobile-menu-override
+    *:not([class*="bg-gradient"]):not(.text-white):not([class*="text-red"]):not(
+      .publikoPune
+    ):not(.publikoPune *) {
+    color: #1f2937 !important;
+  }
+
+  .header-white-text ~ .mobile-menu-override .publikoPune,
+  .header-white-text + .mobile-menu-override .publikoPune {
+    color: white !important;
+  }
+}
