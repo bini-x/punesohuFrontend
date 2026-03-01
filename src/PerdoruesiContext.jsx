@@ -10,7 +10,7 @@ const PerdoruesiProvider = ({ children }) => {
     const fetchPerdoruesiData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/kycja/perdoruesi",
+          `${import.meta.env.VITE_API_URL}/api/kycja/perdoruesi`,
           { withCredentials: true },
         );
 
