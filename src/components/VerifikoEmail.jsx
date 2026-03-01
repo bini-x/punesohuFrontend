@@ -8,6 +8,7 @@ function VerifikoEmail() {
   const navigate = useNavigate();
   const { showAlert } = useAlert();
   const [kodiVerifikimit, setKodiVerifikimit] = useState("");
+  const [duke_derguar, setDuke_derguar] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,6 +33,23 @@ function VerifikoEmail() {
       if (error.response.data.error.includes("Kodi eshte gabim")) {
         showAlert("Kodi eshte gabim", "error");
       }
+    }
+  };
+
+  const ridergoBtnClick = async () => {
+    try {
+      setDuke_derguar(true);
+      const email = localStorage.getItem("emailForVerification");
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/regjistrimi/ridergokod`,
+        { email },
+      );
+      showAlert("Kodi u ridërgua në email", "success");
+    } catch (error) {
+      showAlert("Gabim gjatë ridërgimit të kodit", "error");
+      console.log(error);
+    } finally {
+      setDuke_derguar(false);
     }
   };
 
@@ -65,6 +83,14 @@ function VerifikoEmail() {
 
         <button type="submit" className="publikoPune">
           Konfirmo
+        </button>
+        <button
+          type="button"
+          onClick={ridergoBtnClick}
+          disabled={duke_derguar}
+          className="w-full h-10 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-all"
+        >
+          {duke_derguar ? "Duke dërguar..." : "Ridërgo Kodin"}
         </button>
       </form>
     </div>
